@@ -1,14 +1,19 @@
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class Gato {
 
 	Double energia = 6.0 ;
 	Double velocidad = (5/energia/10) ;
 	Double ratonesComidos = 0.0 ;
-
+	List<String> misRatones = new ArrayList<String>();
+	
 	public void comerRaton (Raton raton) {
 		
 		this.energia = this.energia + (raton.peso +12);
 		this.ratonesComidos = this.ratonesComidos + 1;
+		this.misRatones.add(raton.nombre);
 		
 	}
 	
@@ -35,4 +40,17 @@ public class Gato {
 		return this.devolverEnergiaCorrer(raton.metros) < this.devolverEnergiaComer(raton);
 		
 	}
+	
+	public void nombreRatones (Gato gato){
+		
+		
+		
+	}
+
+	public List<String> devolverNombreRatonesComidos (Gato gato){ 
+
+		return this.misRatones;
+		
+	}
+		
 }
